@@ -15,7 +15,7 @@
       </td>
       <td id="cutoffSliders">
         <h3>cutoff</h3>
-        <p><b>frequency</b> 20Hz<input id="cutoffFrequencySlider" type="range" min="20" max="20000" step="1" onChange="synth.cutoff.maxValue(this.value)"/>20,000Hz</p>
+        <p><b>frequency</b> 20Hz<input id="cutoffFrequencySlider" type="range" min="20" max="20000" step="1" onChange="synth.cutoff.maxFrequency(this.value)"/>20,000Hz</p>
         <p><b>attack</b> 0s<input id="cutoffAttackSlider" type="range" min="0" max="5" step=".001" onChange="synth.cutoff.attack(this.value)"/>5s</p>
         <p><b>decay</b> 0s<input id="cutoffDecaySlider" type="range" min="0" max="5" step=".001" onChange="synth.cutoff.decay(this.value)"/>5s</p>
         <p><b>sustain</b> 0x<input id="cutoffSustainSlider" type="range" min="0" max="5" step=".01" onChange="synth.cutoff.sustain(this.value)"/>5x</p>  

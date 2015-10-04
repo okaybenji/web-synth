@@ -16,7 +16,7 @@ var synth = (function createSynth() {
     stereoWidth: 0.5,
     numVoices: 18,
     cutoff: {
-      maxValue: 7500,
+      maxFrequency: 7500,
       attack: 0.2,
       decay: 0.2,
       sustain: 0.2
@@ -165,7 +165,7 @@ var synth = (function createSynth() {
   document.getElementById('decaySlider').value = voice.decay;
   document.getElementById('sustainSlider').value = voice.sustain;
   document.getElementById('releaseSlider').value = voice.release;
-  document.getElementById('cutoffFrequencySlider').value = voice.cutoff.maxValue;
+  document.getElementById('cutoffFrequencySlider').value = voice.cutoff.maxFrequency;
   document.getElementById('cutoffAttackSlider').value = voice.cutoff.attack;
   document.getElementById('cutoffDecaySlider').value = voice.cutoff.decay;
   document.getElementById('cutoffSustainSlider').value = voice.cutoff.sustain;
