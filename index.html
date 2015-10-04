@@ -22,16 +22,17 @@
       </td>
       <h3>oscillators</h3>      
       <p><b>octave</b> <button onclick="synth.decreaseOctave()">-</button> <button onclick="synth.increaseOctave()">+</button></p>
-      <p><b>waveform</b> <select id="waveformSelect" onChange="synth.waveform(this.value)"></p>
+      <p><b>waveform</b> <select id="waveformSelect" onChange="synth.waveform(this.value)">
         <option>sine</option>
         <option>square</option>
         <option>triangle</option>
         <option>sawtooth</option>
       </select>
+      </p>
       <h3>synth</h3> 
       <p><b>stereo width</b> 0%<input id="widthSlider" type="range" min="0" max="1" step=".01" onChange="synth.width(this.value)">100%</p>
       <div id="keyboard"></div>
-    </div>
+    </table>
   </body>
   <script src="submono.js"></script>
   <script src="subpoly.js"></script>

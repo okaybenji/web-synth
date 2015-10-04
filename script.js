@@ -24,7 +24,6 @@ var synth = (function createSynth() {
   };
 
   var polysynth = new Polysynth(audioCtx, synthConfig);
-  polysynth.createSetters();
   
   polysynth.decreaseOctave = function decreaseOctave() {
     polysynth.voices.forEach(function(voice) {
