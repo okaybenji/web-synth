@@ -1,0 +1,39 @@
+<html>
+  <head>
+    <title>subpoly demo</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <table id="settingsPanel" ng-show="showSettings">
+      <td id="ampSliders">
+        <h3>amp</h3>
+        <p><b>volume</b> 0%<input id="volumeSlider" type="range" min="0" max="1" step=".01" onChange="synth.maxGain(this.value)"/>100%</p>
+        <p><b>attack</b> 0s<input id="attackSlider" type="range" min="0" max="5" step=".001" onChange="synth.attack(this.value)"/>5s</p>
+        <p><b>decay</b> 0s<input id="decaySlider" type="range" min="0" max="5" step=".001" onChange="synth.decay(this.value)"/>5s</p>
+        <p><b>sustain</b> 0x<input id="sustainSlider" type="range" min="0" max="1" step=".005" onChange="synth.sustain(this.value)"/>1x</p>
+        <p><b>release</b> 0s<input id="releaseSlider" type="range" min="0" max="5" step=".001" onChange="synth.release(this.value)"/>5s</p>
+      </td>
+      <td id="cutoffSliders">
+        <h3>cutoff</h3>
+        <p><b>frequency</b> 20Hz<input id="cutoffFrequencySlider" type="range" min="20" max="20000" step="1" onChange="synth.cutoff.maxValue(this.value)"/>20,000Hz</p>
+        <p><b>attack</b> 0s<input id="cutoffAttackSlider" type="range" min="0" max="5" step=".001" onChange="synth.cutoff.attack(this.value)"/>5s</p>
+        <p><b>decay</b> 0s<input id="cutoffDecaySlider" type="range" min="0" max="5" step=".001" onChange="synth.cutoff.decay(this.value)"/>5s</p>
+        <p><b>sustain</b> 0x<input id="cutoffSustainSlider" type="range" min="0" max="5" step=".01" onChange="synth.cutoff.sustain(this.value)"/>5x</p>  
+      </td>
+      <h3>oscillators</h3>      
+      <p><b>octave</b> <button onclick="synth.decreaseOctave()">-</button> <button onclick="synth.increaseOctave()">+</button></p>
+      <p><b>waveform</b> <select id="waveformSelect" onChange="synth.waveform(this.value)"></p>
+        <option>sine</option>
+        <option>square</option>
+        <option>triangle</option>
+        <option>sawtooth</option>
+      </select>
+      <h3>synth</h3> 
+      <p><b>stereo width</b> 0%<input id="widthSlider" type="range" min="0" max="1" step=".01" onChange="synth.width(this.value)">100%</p>
+      <div id="keyboard"></div>
+    </div>
+  </body>
+  <script src="submono.js"></script>
+  <script src="subpoly.js"></script>
+  <script src="script.js"></script>
+</html>
