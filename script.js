@@ -1,4 +1,4 @@
-var synth = (function createSynth() {
+var webSynth = (function createSynth() {
   var audioCtx;
   if (typeof AudioContext !== "undefined") {
     audioCtx = new AudioContext();
@@ -43,15 +43,15 @@ var synth = (function createSynth() {
 (function setUpKeyboard() {
   function keyOn(key, keyIndex) {
     var keyDiv = document.getElementById(key.keyCode);
-    keyDiv.style.backgroundColor = "hsl(324, 100%, 46%)";
-    var voice = synth.voices[keyIndex];
+    keyDiv.style.backgroundColor = "rgb(237, 20, 91)";
+    var voice = webSynth.voices[keyIndex];
     voice.start();
   }
 
   function keyOff(key, keyIndex) {
     var keyDiv = document.getElementById(key.keyCode);
     keyDiv.style.backgroundColor = "";
-    var voice = synth.voices[keyIndex];
+    var voice = webSynth.voices[keyIndex];
     voice.stop();
   }
 
@@ -102,7 +102,7 @@ var synth = (function createSynth() {
   var leftOffset = 0;
   var lastKeyColor = 'white';
 
-  synth.voices.forEach(function(voice, i) {
+  webSynth.voices.forEach(function(voice, i) {
     var keyNum = i + 40;
     var keyColor = getKeyColor(keyNum);
     voice.pitch(getFreq(keyNum));
@@ -158,7 +158,7 @@ var synth = (function createSynth() {
 
 (function initControls() {
   // ensure all control values match initial synth values
-  var voice = synth.voices[0];
+  var voice = webSynth.voices[0];
   document.getElementById('volumeSlider').value = voice.maxGain;
   document.getElementById('attackSlider').value = voice.attack;
   document.getElementById('decaySlider').value = voice.decay;
