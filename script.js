@@ -29,13 +29,13 @@ var webSynth = (function createSynth() {
     polysynth.voices.forEach(function(voice) {
       voice.pitch(voice.pitch() / 2);
     });
-  }
+  };
 
   polysynth.increaseOctave = function increaseOctave() {
     polysynth.voices.forEach(function(voice) {
       voice.pitch(voice.pitch() * 2);
     });
-  }
+  };
   
   return polysynth;
 })();
@@ -124,8 +124,8 @@ var webSynth = (function createSynth() {
     lastKeyColor = keyColor;
     keyDiv.style.left = leftOffset + 'px';
 
-    keyDiv.onmousedown = function() { keyOn(keyMap[i], i) };
-    keyDiv.onmouseup = function() { keyOff(keyMap[i], i) };
+    keyDiv.onmousedown = function() { keyOn(keyMap[i], i); };
+    keyDiv.onmouseup = function() { keyOff(keyMap[i], i); };
 
     var keyboard = document.getElementById('keyboard');
     keyboard.appendChild(keyDiv);
